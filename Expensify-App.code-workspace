@@ -1,0 +1,13 @@
+{
+    "folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\webpack"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "ExpensifyApp"
+	}
+}
