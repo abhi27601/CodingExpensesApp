@@ -36,7 +36,7 @@ const NotFoundPage = () => (
 
     </div>
 )
-console.log("bhargavi");
+
 const Header = () => (
     <header>
       <h1>Expensify App</h1>
