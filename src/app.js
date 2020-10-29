@@ -9,6 +9,7 @@ const ExpenseDashBoardPage = () => (
         This is from dashboard component.
     </div>
 ) 
+console.log("Gauri")
 
 const AddExpensePage = () => (
     <div>
