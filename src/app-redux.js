@@ -10,7 +10,7 @@ const incrementCount = ({incrementBy = 1}={}) => ({
     incrementBy
 })
 
-const decrementCount = ({decrementBy})=> ({
+const decrementCount = ({decrementBy = 1} = {})=> ({
     type:'DECREMENT',
     decrementBy
 })
