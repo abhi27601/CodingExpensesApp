@@ -6,7 +6,9 @@ const { devServer } = require("./webpack.prod");
 
 module.exports = {
   entry: {
-    app: "./src/app.js"
+    //app:"./src/destructuring.js"
+    //app:"./src/app.js"
+    app: "./src/app-redux.js"
    // vendor: "./src/vendor.js"
   },
   module: {
