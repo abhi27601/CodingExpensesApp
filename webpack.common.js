@@ -38,7 +38,7 @@ module.exports = {
   devtool: 'eval-cheap-module-source-map',
   devServer:{
     contentBase: path.resolve(__dirname, 'dist'),
-    port:9000,
+    port:8000,
     historyApiFallback: true
   }
 };
