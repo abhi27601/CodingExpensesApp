@@ -7,10 +7,10 @@ const { devServer } = require("./webpack.prod");
 module.exports = {
   entry: {
     //app:"./src/destructuring.js"
-    //app:"./src/app.js"
+    app:"./src/app.js"
     //app: "./src/app-redux.js"
    // vendor: "./src/vendor.js"
-   app:"./src/redux-expensify.js"
+   //app:"./src/redux-expensify.js"
   },
   module: {
     rules: [
@@ -38,7 +38,7 @@ module.exports = {
   devtool: 'eval-cheap-module-source-map',
   devServer:{
     contentBase: path.resolve(__dirname, 'dist'),
-    port:8000,
+    port:9000,
     historyApiFallback: true
   }
 };
