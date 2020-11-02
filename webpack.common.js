@@ -11,6 +11,7 @@ module.exports = {
     //app: "./src/app-redux.js"
    // vendor: "./src/vendor.js"
    //app:"./src/redux-expensify.js"
+   //app:"./src/hoc.js"
   },
   module: {
     rules: [
