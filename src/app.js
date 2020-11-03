@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter  from "./routers/AppRouter";
-import configureStore from "../store/configureStore";
+import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
-import {addExpense,editExpense,removeExpense} from '../actions/expenses'
-import {setEndDate , setTextfilter , setStartDate , sortByAmount , sortByDate} from '../actions/filters'
-import getVisibleExpenses from "../selectors/getVisibleExpenses";
+import {addExpense,editExpense,removeExpense} from './actions/expenses'
+import {setEndDate , setTextfilter , setStartDate , sortByAmount , sortByDate} from './actions/filters'
+import getVisibleExpenses from "./selectors/getVisibleExpenses";
 
 import '../node_modules/normalize.css';
 import './styles/styles.scss';
@@ -25,13 +25,12 @@ store.dispatch(setTextfilter('water'));
 
 setTimeout(() => {
     store.dispatch(setTextfilter('gas'))
-}, 1500);
+}, 1500); 
+
 const jsx= (
 <Provider store = {store}>
     <AppRouter />
 </Provider>
     )
-
-
 
 ReactDOM.render(jsx, document.getElementById('app'));
