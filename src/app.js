@@ -19,13 +19,13 @@ store.subscribe(()=>{
     console.log(visibleExpenses);
 })
 const expenseOne = store.dispatch(addExpense({description:'Water bill',amount:100,createdAt:1000}));
-const expensetwo = store.dispatch(addExpense({description:'Gas bill',amount:100,createdAt:1000}));
+const expensetwo = store.dispatch(addExpense({description:'Gas bill',amount:200,createdAt:4000}));
+store.dispatch(addExpense({description:'Rent',amount:350,createdAt:2000}));
+store.dispatch(addExpense({description:'Home',amount:400,createdAt:3000}));
 
-store.dispatch(setTextfilter('water'));
 
-setTimeout(() => {
-    store.dispatch(setTextfilter('gas'))
-}, 1500); 
+
+ 
 
 const jsx= (
 <Provider store = {store}>
