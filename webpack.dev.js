@@ -24,8 +24,18 @@ module.exports = merge(common, {
         test: /\.s?css$/,
         use: [
           "style-loader", //3. Inject styles into DOM // here css is attahced from js code i.e commonjs code.
-          "css-loader", //2. Turns css into commonjs
-          "sass-loader" //1. Turns sass into css
+          {
+            loader:'css-loader',
+          options:{
+            sourceMap:true
+            }
+          }, //2. Turns css into commonjs
+          {
+            loader:'sass-loader',
+          options:{
+            sourceMap:true
+            }
+          } //1. Turns sass into css
         ]
       }
     ]
