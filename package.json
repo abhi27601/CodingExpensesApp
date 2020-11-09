@@ -17,6 +17,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
+    "express": "^4.17.1",
     "file-loader": "^6.1.1",
     "html-loader": "^1.3.2",
     "html-webpack-plugin": "^4.5.0",
@@ -52,7 +53,11 @@
     "start-webpack": "webpack --config webpack.dev.js",
     "start": "webpack-dev-server  --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js",
-    "test": "jest --jest.config.json"
+    "test": "jest --jest.config.json",
+    "server:heroku":"node server/server.js",
+    "heroku-postbuild":"yarn run build:prod"
+
+
   },
   "author": "Abhi",
   "license": "ISC"
