@@ -14,9 +14,12 @@ exports[`should render expense list with expenses 1`] = `
   Expense Description: 
   Rent
   ,
-  <div>
+  <p>
     109500
-    ,
+    -
+    Dec 28th, 1969
+  </p>
+  <div>
     -345600000
   </div>
 </div>

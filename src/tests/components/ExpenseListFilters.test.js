@@ -78,7 +78,7 @@ test('should sort By date',() => {
  test('should handle focus change',() => {
     const calendarfocused = 'endDate'
     wrapper.find('withStyles(DateRangePicker)').prop('onFocusChange')(calendarfocused);
-    expect(wrapper.state('calendarfocused')).toBe(calendarfocused);
+    expect(wrapper.state('calendarFocused')).toBe(calendarfocused);
     //expect(setEndDate).toHaveBeenLastCalledWith(endDate)
 }) 
 

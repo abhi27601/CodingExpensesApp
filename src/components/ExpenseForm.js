@@ -9,7 +9,7 @@ constructor(props){
     super(props);
     this.state={
         description:props.expense ? props.expense.description : '',
-        amount:props.expense ? (props.expense.amount/100).toString() : '',
+        amount:props.expense ? (props.expense.amount / 100).toString() : '',
         note:props.expense ? props.expense.note : '',
         createdAt:props.expense ? moment(props.expense.createdAt) : moment(),
         calendarfocused:false,
@@ -64,7 +64,7 @@ constructor(props){
            console.log("!!Submitted !!")
            this.props.onSubmit({
                description:this.state.description,
-               amount:parseFloat(this.state.amount)*100,
+               amount:parseFloat(this.state.amount)* 100,
                note:this.state.note,
                createdAt:this.state.createdAt.valueOf()
            })
