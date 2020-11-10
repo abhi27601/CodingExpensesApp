@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 import  numeral  from "numeral";
 import { connect } from 'react-redux';
 import { removeExpense } from "../actions/expenses";
-    import moment from "moment";
+import moment from "moment";
+
 const ExpenseListItem = (props) => (
     <div>
         <NavLink to={ `/edit/${props.id}`} activeClassName = 'is-active'><h3>{props.description}</h3></NavLink>
@@ -11,8 +12,7 @@ const ExpenseListItem = (props) => (
         <p>{numeral(props.amount / 100).format('$0,0.00')} 
         -
         {moment(props.createdAt).format('MMM Do, YYYY')}
-        </p>
-       
+        </p>  
     </div>
 )
 export default ExpenseListItem

@@ -52,10 +52,10 @@
   "scripts": {
     "build-babel": "babel src -d ./public/scripts --watch",
     "start-webpack": "webpack --config webpack.dev.js",
-    "start": "webpack-dev-server  --config webpack.dev.js --open",
+    "start2": "webpack-dev-server  --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js",
     "test": "jest --jest.config.json",
-    "server:heroku": "node server/server.js",
+    "start": "node server/server.js",
     "heroku-postbuild": "yarn run build"
   },
   "author": "Abhi",

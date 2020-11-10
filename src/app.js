@@ -18,10 +18,10 @@ store.subscribe(()=>{
     const visibleExpenses = getVisibleExpenses(state.expenses,state.filters);
     console.log(visibleExpenses);
 })
-const expenseOne = store.dispatch(addExpense({description:'Water bill',amount:100,createdAt:1000}));
-const expensetwo = store.dispatch(addExpense({description:'Gas bill',amount:200,createdAt:4000}));
-store.dispatch(addExpense({description:'Rent',amount:350,createdAt:2000}));
-store.dispatch(addExpense({description:'Home',amount:400,createdAt:3000}));
+//const expenseOne = store.dispatch(addExpense({description:'Water bill',amount:100,createdAt:1000}));
+//const expensetwo = store.dispatch(addExpense({description:'Gas bill',amount:200,createdAt:4000}));
+//store.dispatch(addExpense({description:'Rent',amount:350,createdAt:2000}));
+//store.dispatch(addExpense({description:'Home',amount:400,createdAt:3000}));
 
 
 
