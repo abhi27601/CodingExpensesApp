@@ -7,3 +7,15 @@ test('should return total sum from expenses', () => {
     expect(sum).toBe(114195);
 })
 
+test('should return total sum from expenses', () => {
+    const sum = getTotalSelector([]);
+    expect(sum).toBe(0);
+})
+
+test('should return total sum from expenses', () => {
+    const sum = getTotalSelector([expenses[0]]);
+    expect(sum).toBe(195);
+})
+
+
+
