@@ -6,6 +6,8 @@ import { Provider } from "react-redux";
 import {addExpense,editExpense,removeExpense} from './actions/expenses'
 import {setEndDate , setTextfilter , setStartDate , sortByAmount , sortByDate} from './actions/filters'
 import getVisibleExpenses from "./selectors/getVisibleExpenses";
+import './firebase/firebase';
+import  "./promises";
 
 import '../node_modules/normalize.css';
 import './styles/styles.scss';
