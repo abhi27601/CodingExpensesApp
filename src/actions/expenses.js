@@ -1,5 +1,14 @@
 import { v4 as uuidv4 } from 'uuid';
+import database from "../firebase/firebase";
+
+// componet calls action generator
+//eturns a function
+//dipatching function
+//redux-thunk
+// do some action
+// state change is done.
 //ADD_EXPENSE
+/*
 export const addExpense = ({
     description = '',
     note = '',
@@ -15,9 +24,35 @@ export const addExpense = ({
         amount,
         createdAt
     }
+})*/
+export const addExpense = (expense) => ({
+    type:'ADD_EXPENSE',
+    expense
 })
+
+
+
 //REMOVE_EXPENSE
 
+export const startAddExpense = ( expenseData = {}) => {
+
+    return (dispatch) => {
+      const {
+        description = '',
+        note = '',
+        amount = 0,
+        createdAt = 0
+      } = expenseData;
+      const expense = {description , note , amount , createdAt}
+      database.ref('expenses').push(expense).then((ref) => {
+        console.log('Added')
+        dispatch(addExpense({
+              id:ref.key,
+              ...expense
+          }))
+      })
+    }
+}
 const removeExpense = ({
    id
     } = {}) => ({

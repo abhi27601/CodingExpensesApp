@@ -5,7 +5,8 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "ExpensifyApp"
+		"liveServer.settings.multiRootWorkspaceName": "ExpensifyApp",
+		"compile-hero.disable-compile-files-on-did-save-code": true
 	},
 	"launch": {
 		"version": "0.2.0",
