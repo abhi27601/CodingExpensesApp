@@ -1,5 +1,11 @@
-import { addExpense , editExpense, removeExpense } from '../../actions/expenses'
+import { startAddExpense , editExpense, removeExpense, addExpense } from '../../actions/expenses'
 import expenses from "../fixtures/expenses";
+import configureStore from "redux-mock-store";
+import thunk from "redux-thunk";
+import database from "../../firebase/firebase";
+import moment from 'moment';
+
+const createMockStore = configureStore([thunk]);
 
 test('should setup remove expense action object', () => {
 
@@ -37,11 +43,60 @@ test('should setup add expense action object', () => {
     })
 })
 
-test('should add expense to database and store',() => {
+test('should add expense to database and store',(done) => {
+const store = createMockStore({});
+const expensedata = {
+    description:'Mouse',
+    amount:'30',
+    note:'new mouse for work',
+    createdAt:20000
+}
+store.dispatch(startAddExpense(expensedata))
+.then((data) => {
+   const actions = store.getActions()
+    expect(actions[0]).toEqual({
+        type:'ADD_EXPENSE',
+        expense:{
+            id:expect.any(String),
+            ...expensedata
+        }
+    })
+    database.ref(`expenses/${actions[0].expense.id}`).once('value').then((snapshot) => {
+        expect(snapshot.val()).toEqual(expensedata)
+        done();
+    })
+  // expect(1).toBe(1); 
+   
+}).catch((error) => {
+    console.log(error)
+})
 
 })
 
 test('should add expense to database and store',() => {
+    const store = createMockStore({});
+    const expensedata = {
+    description:'',
+    amount:'',
+    note:'',
+    createdAt:0
+    }
+    store.dispatch(startAddExpense(expensedata)).then((done) => {
+        const actions = store.getActions()
+        expect(actions[0]).toEqual({
+            type:'ADD_EXPENSE',
+            expense:{
+                id:expect.any(String),
+                ...expensedata
+            }
+        })
+        database.ref(`expenses/${actions[0].expense.id}`).once('value').then((snapshot) => {
+            expect(snapshot.val()).toEqual(expensedata);
+            done()
+        })
+    }).catch((err) => {
+        console.log(err);
+    })
 
 })
 /*test('should setup default add expense action object', () => {

@@ -5,14 +5,15 @@ const { devServer } = require("./webpack.prod");
 //file-loader read the assets i.e it ll actually execute the img or svgs present in js and emits the file in the specified path.
 
 module.exports = {
-  entry: {
+  entry: [
+    '@babel/polyfill',
     //app:"./src/destructuring.js"
-    app:"./src/app.js"
+    "./src/app.js"
     //app: "./src/app-redux.js"
    // vendor: "./src/vendor.js"
    //app:"./src/redux-expensify.js"
    //app:"./src/hoc.js"
-  },
+  ],
   module: {
     rules: [
       {
