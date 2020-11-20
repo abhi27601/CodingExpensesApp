@@ -9,10 +9,11 @@ console.log(__dirname);
 if(process.env.NODE_ENV === 'test'){
   console.log(process.env.NODE_ENV)
   require('dotenv').config({path: '.env.test'})
-}else if(process.env.NODE_ENV === 'development'){
+}else if(process.env.NODE_ENV === 'development' || process.env.NODE_ENV == 'production'){
   console.log(process.env.NODE_ENV)
   require('dotenv').config({path: '.env.development'})
 }
+
 
 module.exports = {
   entry: [

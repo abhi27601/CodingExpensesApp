@@ -60,7 +60,7 @@
     "build-babel": "babel src -d ./public/scripts --watch",
     "start-webpack": "webpack --config webpack.dev.js",
     "start2": "cross-env NODE_ENV=development webpack-dev-server  --config webpack.dev.js --open",
-    "build": "webpack --config webpack.prod.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
     "test": "cross-env NODE_ENV=test jest --jest.config.json",
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build"
