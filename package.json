@@ -13,8 +13,11 @@
     "babel-loader": "^8.1.0",
     "bootstrap": "^4.5.3",
     "clean-webpack-plugin": "^3.0.0",
+    "core-js": "^3.7.0",
+    "cross-env": "^7.0.2",
     "css-loader": "^5.0.0",
     "css-minimizer-webpack-plugin": "^1.1.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "file-loader": "^6.1.1",
     "firebase": "^8.0.1",
@@ -56,9 +59,9 @@
   "scripts": {
     "build-babel": "babel src -d ./public/scripts --watch",
     "start-webpack": "webpack --config webpack.dev.js",
-    "start2": "webpack-dev-server  --config webpack.dev.js --open",
+    "start2": "cross-env NODE_ENV=development webpack-dev-server  --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js",
-    "test": "jest --jest.config.json",
+    "test": "cross-env NODE_ENV=test jest --jest.config.json",
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build"
   },

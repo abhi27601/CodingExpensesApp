@@ -5,8 +5,16 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 //style loader is used to write style tag ,attach style into DOM
 // here it will not create dist folder as its written with webpack-dev-server
+/*process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+if (process.env.NODE_ENV === 'test'){
+console.log(process.env.NODE_ENV)
+}
+else {
+  console.log(process.env.NODE_ENV);
+}*/
 
-module.exports = merge(common, {
+
+module.exports = merge(common,  {
   mode: "development",
   output: {
     filename: "[name].bundle.js",
@@ -40,5 +48,5 @@ module.exports = merge(common, {
       }
     ]
   }
-  
-});
+})
+

@@ -64,6 +64,8 @@ store.dispatch(startAddExpense(expensedata))
     database.ref(`expenses/${actions[0].expense.id}`).once('value').then((snapshot) => {
         expect(snapshot.val()).toEqual(expensedata)
         done();
+    }).catch((err) => {
+
     })
   // expect(1).toBe(1); 
    
@@ -93,6 +95,8 @@ test('should add expense to database and store',() => {
         database.ref(`expenses/${actions[0].expense.id}`).once('value').then((snapshot) => {
             expect(snapshot.val()).toEqual(expensedata);
             done()
+        }).catch((err) => {
+            
         })
     }).catch((err) => {
         console.log(err);

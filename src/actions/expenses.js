@@ -41,7 +41,7 @@ export const startAddExpense = ( expenseData = {}) => {
       } = expenseData;
       const expense = {description , note , amount , createdAt}
       const ref = await database.ref('expenses').push(expense);
-        console.log('Added');
+        
         dispatch(addExpense({
             id: ref.key,
             ...expense
