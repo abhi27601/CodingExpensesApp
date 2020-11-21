@@ -72,3 +72,14 @@ test('should not edit expense and state change shld be noticed',() => {
    expect(state).toEqual(expenses);
    expect(state.length).toBe(3);
 })
+
+test('should set up expenses', () => {
+    const action = {
+        type:'SET_EXPENSES',
+        expenses:[expenses[1]]
+    }
+    const state = expensesReducer([] , action);
+    expect(state).toEqual([expenses[1]]);
+})
+
+
