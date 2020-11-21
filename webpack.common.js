@@ -16,15 +16,15 @@ if(process.env.NODE_ENV === 'test'){
 
 
 module.exports = {
-  entry: [
-    '@babel/polyfill',
+  entry: {
+    polyfill:'@babel/polyfill',
     //app:"./src/destructuring.js"
-    "./src/app.js"
+    app:"./src/app.js"
     //app: "./src/app-redux.js"
    // vendor: "./src/vendor.js"
    //app:"./src/redux-expensify.js"
    //app:"./src/hoc.js"
-  ],
+  },
   module: {
     rules: [
       {
