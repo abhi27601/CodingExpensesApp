@@ -87,4 +87,42 @@ const editExpense = (id,updates) => ({
   }
 }
 
+export const startRemoveExpense = ({id} = {}) => {
+    return (dispatch) => {
+       
+      return database.ref(`expenses/${id}`).remove()
+      .then(() => {
+        dispatch(removeExpense({id}))
+      }).catch(()=>{
+        console.log('error while removing data')
+      })
+
+    }
+}
+
+export const startEditExpense = (id,updates) => {
+
+  return (dispatch) => {
+    return database.ref( `expenses/${id}`).update(updates)
+    .then(() => {
+      dispatch(editExpense(id,updates))
+    })
+    .catch((err) => {
+      console.log("error while editing")
+    })
+
+  }
+}
+/*
+export const startRemoveExpense = ({ id } = {}) => {
+  return (dispatch) => {
+    
+    return database.ref(`expenses/${id}`).remove().then(() => {
+      dispatch(removeExpense({ id }));
+    });
+  };
+};*/
+
+
+
  export {editExpense , removeExpense};
