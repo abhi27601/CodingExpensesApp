@@ -1,8 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import database from "../firebase/firebase";
-
 // componet calls action generator
-//eturns a function
+// returns a function
 //dipatching function
 //redux-thunk
 // do some action

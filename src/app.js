@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import {addExpense,editExpense,removeExpense, startSetExpenses} from './actions/expenses'
 import {setEndDate , setTextfilter , setStartDate , sortByAmount , sortByDate} from './actions/filters'
 import getVisibleExpenses from "./selectors/getVisibleExpenses";
-import './firebase/firebase';
+import {firebase} from './firebase/firebase';
 import  "./promises";
 
 import '../node_modules/normalize.css';
@@ -41,3 +41,11 @@ store.dispatch(startSetExpenses()).then(() => {
     ReactDOM.render(jsx, document.getElementById('app'));
 })
 
+firebase.auth().onAuthStateChanged((user) => {
+    if(user) {
+        console.log('login')
+    }
+    else {
+        console.log('logout')
+    }
+})
