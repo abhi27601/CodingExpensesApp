@@ -78,7 +78,7 @@ test('should set up expenses', () => {
         type:'SET_EXPENSES',
         expenses:[expenses[1]]
     }
-    const state = expensesReducer([] , action);
+    const state = expensesReducer(expenses , action);
     expect(state).toEqual([expenses[1]]);
 })
 
