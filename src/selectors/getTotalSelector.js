@@ -1,9 +1,7 @@
-
 const getTotalSelector = (expenses) => {
+  return expenses.reduce((Totalexpenses, expense) => {
+    return (Totalexpenses += expense.amount);
+  }, 0);
+};
 
-    return expenses.reduce( (Totalexpenses,expense) => {
-       return Totalexpenses += expense.amount;
-    },0)
-}
-
-export default getTotalSelector
+export default getTotalSelector;

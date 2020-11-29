@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require('webpack');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 // html loader will require all the assets in commonjs.accordion
 //file-loader read the assets i.e it ll actually execute the img or svgs present in js and emits the file in the specified path.
@@ -42,7 +43,10 @@ module.exports = {
           loader: "file-loader",
           options: {
             name: "[name].[hash].[ext]",
-            outputPath: "imgs"
+            outputPath: "imgs",
+         // publicPath: 'images',
+          //outputPath: 'assets/img',
+          //esModule: false
           }
         }
       }
@@ -59,12 +63,23 @@ module.exports = {
       'process.env.FIREBASE_APP_ID':JSON.stringify(process.env.FIREBASE_APP_ID),
       'process.env.FIREBASE_MEASUREMENT_ID':JSON.stringify(process.env.FIREBASE_MEASUREMENT_ID),
 
-    })
+    }),
+    new CopyWebpackPlugin({
+      patterns:[
+      {
+          //Note:- No wildcard is specified hence will copy all files and folders
+          from: 'src/images', //Will resolve to RepoDir/src/assets 
+          to: 'images' //Copies all files from above dest to dist/assets
+      },
+    
+  ]
+})
   ],
   devtool: 'eval-cheap-module-source-map',
   devServer:{
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'public','dist'),
     port:9000,
+    publicPath: '/',
     historyApiFallback: true
   }
 };
