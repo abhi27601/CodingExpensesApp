@@ -45,7 +45,7 @@ const renderApp =() => {
   //  ReactDOM.render(jsx, document.getElementById('app'));
 }
 
-/* firebase.auth().onAuthStateChanged((user) => {
+firebase.auth().onAuthStateChanged((user) => {
     if(user) {
         console.log(user.uid)
         store.dispatch(login(user.uid))
@@ -63,4 +63,4 @@ const renderApp =() => {
         renderApp()
         history.push('/');
     }
-})*/
+})
